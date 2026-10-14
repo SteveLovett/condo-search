@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>1–2 bedroom condos under $500K · Carlsbad, Encinitas, San Marcos</title>
+<meta property="og:title" content="1–2 bedroom condos under $500K">
+<meta property="og:description" content="Carlsbad, Encinitas, and San Marcos listings, with an estimated monthly cost for each.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --surface: #f5f6f8;
+    --border: #e2e5e9;
+    --text: #1b1e22;
+    --muted: #5c636c;
+    --faint: #868d96;
+    --accent: #2459d6;
+    --ok-bg: #e8f6ee;
+    --ok-fg: #19703f;
+    --warn-bg: #fdf3dc;
+    --warn-fg: #855400;
+    --bad-bg: #fbe9e8;
+    --bad-fg: #ad2b22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141619;
+      --surface: #1c1f23;
+      --border: #2c3137;
+      --text: #e6e8eb;
+      --muted: #a2a9b2;
+      --faint: #7b828b;
+      --accent: #7aa5ff;
+      --ok-bg: #13301f;
+      --ok-fg: #74d39f;
+      --warn-bg: #352a0e;
+      --warn-fg: #f0c25b;
+      --bad-bg: #3b1a18;
+      --bad-fg: #ff8f86;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 1180px; margin: 0 auto; padding: 28px 20px 48px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 18px; margin: 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .muted { color: var(--muted); margin: 0; }
+  .fine { color: var(--faint); font-size: 13px; margin: 8px 0 0; }
+  section { margin-top: 28px; }
+
+  .top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .stats { display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 14px; }
+  .stat-value { font-size: 34px; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat-value.accent { color: var(--accent); }
+  .stat-value.ok { color: var(--ok-fg); }
+  .stat-value.warn { color: var(--warn-fg); }
+  .stat-label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+  .card h2 { font-size: 15px; margin-bottom: 12px; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: end; }
+  .field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+  input[type="text"], select {
+    font: inherit;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+  input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .toggle input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
+
+  .section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill {
+    font: inherit;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .pill[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 9px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .num { text-align: right; white-space: nowrap; }
+  .nowrap { white-space: nowrap; }
+  .note { display: block; color: var(--faint); font-size: 12px; font-weight: 400; }
+  tr.ok td { background: var(--ok-bg); }
+  tr.warn td { background: var(--warn-bg); }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .badge.ok { color: var(--ok-fg); background: var(--ok-bg); }
+  .badge.warn { color: var(--warn-fg); background: var(--warn-bg); }
+  .badge.bad { color: var(--bad-fg); background: var(--bad-bg); }
+  .badge.none { color: var(--faint); padding-left: 0; }
+
+  .bottom { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .bottom .muted { margin: 4px 0 10px; }
+  .callout { border: 1px solid var(--border); border-left: 3px solid var(--faint); border-radius: 8px; padding: 12px 14px; background: var(--surface); }
+  .callout h3 { font-size: 14px; margin: 0 0 4px; }
+  .callout p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  footer { margin-top: 36px; padding-top: 6px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 760px) {
+    main { padding: 20px 14px 40px; }
+    h1 { font-size: 24px; }
+    .top, .bottom { grid-template-columns: 1fr; }
+    .stats { gap: 28px; }
+    .stat-value { font-size: 28px; }
+    table.cards thead { display: none; }
+    table.cards, table.cards tbody, table.cards tr, table.cards td { display: block; width: 100%; }
+    table.cards tr { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+    table.cards tr.ok, table.cards tr.ok td { background: var(--ok-bg); }
+    table.cards tr.warn, table.cards tr.warn td { background: var(--warn-bg); }
+    table.cards td { display: flex; justify-content: space-between; gap: 12px; border: 0; padding: 2px 0; text-align: right; }
+    table.cards td::before { content: attr(data-label); color: var(--muted); text-align: left; }
+    table.cards td.addr { display: block; text-align: left; font-weight: 600; padding-bottom: 6px; }
+    table.cards td.addr::before { content: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>1–2 bedroom condos under $500K</h1>
+    <p class="muted">Carlsbad, Encinitas, and San Marcos · active Redfin listings as of Oct 13, 2026</p>
+  </header>
+
+  <section class="top">
+    <div>
+      <div class="stats">
+        <div>
+          <div class="stat-value accent" id="maxPrice">—</div>
+          <div class="stat-label">Highest price that fits, at a $450/mo HOA</div>
+        </div>
+        <div>
+          <div class="stat-value" id="withinCount">—</div>
+          <div class="stat-label">Listings within the limit</div>
+        </div>
+      </div>
+      <p class="muted" id="budgetText"></p>
+    </div>
+
+    <div class="card">
+      <h2>Your numbers</h2>
+      <div class="fields">
+        <label class="field">Social Security ($/mo)<input type="text" id="ss" inputmode="decimal" placeholder="e.g. 2,000"></label>
+        <label class="field">Pensions, other ($/mo)<input type="text" id="other" inputmode="decimal" placeholder="e.g. 1,000"></label>
+        <label class="field">Down payment ($)<input type="text" id="down" inputmode="decimal" placeholder="e.g. 250,000"></label>
+        <label class="field">Other debts ($/mo)<input type="text" id="debts" inputmode="decimal" placeholder="0"></label>
+        <label class="field">30-year fixed rate (%)<input type="text" id="rate" inputmode="decimal"></label>
+        <label class="field">Lender's income limit
+          <select id="dti">
+            <option value="43">43%</option>
+            <option value="45">45%</option>
+            <option value="50">50%</option>
+          </select>
+        </label>
+      </div>
+      <label class="toggle"><input type="checkbox" id="gu"> Lender counts untaxed Social Security at 125%</label>
+      <p class="fine">
+        Lenders may do this when Social Security isn't taxed. The 7.40% default is Freddie Mac's Oct 8, 2026
+        average. What you type is saved in this page's link (after the #), so you can bookmark or re-send it.
+        The page doesn't send it anywhere.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Listings</h2>
+      <div class="pills" role="group" aria-label="Filter by city">
+        <button type="button" class="pill" data-city="All">All</button>
+        <button type="button" class="pill" data-city="San Marcos">San Marcos</button>
+        <button type="button" class="pill" data-city="Carlsbad">Carlsbad</button>
+      </div>
+    </div>
+    <table class="cards" id="listings">
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>City</th>
+          <th class="num">Price</th>
+          <th class="nowrap">Beds / baths</th>
+          <th class="num">Sq ft</th>
+          <th class="num">HOA / mo</th>
+          <th class="num">Est. monthly cost</th>
+          <th class="num">Share of income</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p class="fine">
+      Est. monthly cost = principal and interest on a 30-year loan + property tax (1.15% of price per year) +
+      condo insurance ($40) + HOA as listed, plus mortgage insurance only if the down payment is under 20%.
+      Share of income = (monthly cost + other debts) ÷ the income a lender counts. "Just over" means within
+      4 points of the limit.
+    </p>
+  </section>
+
+  <section class="bottom">
+    <div>
+      <h2>Chateau Lake San Marcos (55+, services included)</h2>
+      <p class="muted">
+        These prices look low because the HOA ($2,705–$3,212/month) also covers a daily meal credit,
+        housekeeping every two weeks, linens, and transportation.
+      </p>
+      <table class="cards" id="chateau">
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th class="num">Price</th>
+            <th class="nowrap">Beds / baths</th>
+            <th class="num">HOA / mo</th>
+            <th class="num">Est. monthly cost</th>
+            <th class="num">Share of income</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <h3>Encinitas: no condos under $500K</h3>
+      <p>
+        The cheapest condos listed are 1-bedrooms at
+        <a href="https://www.redfin.com/CA/Encinitas/155-Rosebay-Dr-92024/unit-40/home/6500572" target="_blank" rel="noopener">155 Rosebay Dr</a>
+        from $575,000. The only Encinitas listing under $500K is a 550 sq ft manufactured home in the Sea Aire
+        mobile home park ($249,999).
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="fine">
+      Source: Redfin active listings, Oct 13, 2026. Listings change daily, so check each link for current
+      status. Excludes the deed-restricted affordable-housing unit at 2241 Indus Way. Estimates only, not a
+      loan approval.
+    </p>
+  </footer>
+</main>
+
+<script>
+  const LISTINGS = [
+    { address: "224 Woodland Pkwy #161", city: "San Marcos", note: "Mission Park", price: 359000, beds: 1, baths: 1, sqft: 651, hoa: 437, url: "https://www.redfin.com/CA/San-Marcos/224-Woodland-Pkwy-92069/unit-161/home/6654940" },
+    { address: "224 Woodland Pkwy #260", city: "San Marcos", note: "Mission Park", price: 359900, beds: 1, baths: 1, sqft: 651, hoa: 430, url: "https://www.redfin.com/CA/San-Marcos/224-Woodland-Pkwy-92069/unit-260/home/6665576" },
+    { address: "210 Woodland Pkwy #135", city: "San Marcos", note: "Mission Park", price: 369900, beds: 1, baths: 1, sqft: 651, hoa: 437, url: "https://www.redfin.com/CA/San-Marcos/210-Woodland-Pkwy-92069/unit-135/home/6665461" },
+    { address: "2330 Hosp Way #304", city: "Carlsbad", price: 419900, beds: 1, baths: 1, sqft: 690, hoa: 506, url: "https://www.redfin.com/CA/Carlsbad/2330-Hosp-Way-92008/unit-304/home/3414998" },
+    { address: "2376 Altisma Way Unit H", city: "Carlsbad", note: "Listed as a cosmetic fixer", price: 450000, beds: 1, baths: 2, sqft: 1060, hoa: 552, url: "https://www.redfin.com/CA/Carlsbad/2376-Altisma-Way-92009/unit-H/home/3752232" },
+    { address: "227 Woodland Pkwy #263", city: "San Marcos", note: "Mission Park", price: 459000, beds: 2, baths: 2, sqft: 908, hoa: 437, url: "https://www.redfin.com/CA/San-Marcos/227-Woodland-Pkwy-92069/unit-263/home/6636124" },
+    { address: "1626 Rue De Valle", city: "San Marcos", price: 465000, beds: 2, baths: 1, sqft: 920, hoa: 380, url: "https://www.redfin.com/CA/San-Marcos/1626-Rue-de-Valle-92078/home/3824978" },
+    { address: "209 Woodland Pkwy #121", city: "San Marcos", note: "Mission Park", price: 470000, beds: 2, baths: 2, sqft: 908, hoa: 438, url: "https://www.redfin.com/CA/San-Marcos/209-Woodland-Pkwy-92069/unit-121/home/6665119" },
+    { address: "1001 Ficus Ln", city: "San Marcos", price: 474900, beds: 2, baths: 2, sqft: 966, hoa: 485, url: "https://www.redfin.com/CA/San-Marcos/1001-Ficus-Ln-92069/home/3921004" },
+    { address: "222 Woodland Pkwy #153", city: "San Marcos", note: "Mission Park", price: 475000, beds: 2, baths: 2, sqft: 908, hoa: 430, url: "https://www.redfin.com/CA/San-Marcos/222-Woodland-Pkwy-92069/unit-153/home/6636222" },
+    { address: "222 Woodland Pkwy #155", city: "San Marcos", note: "Mission Park", price: 480000, beds: 2, baths: 2, sqft: 908, hoa: 437, url: "https://www.redfin.com/CA/San-Marcos/222-Woodland-Pkwy-92069/unit-155/home/6665538" },
+    { address: "204 Woodland Pkwy #220", city: "San Marcos", note: "Mission Park", price: 480000, beds: 2, baths: 2, sqft: 940, hoa: 438, url: "https://www.redfin.com/CA/San-Marcos/204-Woodland-Pkwy-92069/unit-220/home/6665406" },
+    { address: "1022 Grape St", city: "San Marcos", price: 499999, beds: 2, baths: 2, sqft: 972, hoa: 485, url: "https://www.redfin.com/CA/San-Marcos/1022-Grape-St-92069/home/3920993" },
+    { address: "2360 Hosp Way", city: "Carlsbad", note: "Listed at exactly $500,000", price: 500000, beds: 2, baths: 1, sqft: 900, hoa: 675, url: "https://www.redfin.com/CA/Carlsbad/2360-Hosp-Way-92008/home/195798047" },
+  ];
+
+  const CHATEAU = [
+    { address: "1616 Circa Del Lago #C108", price: 249000, beds: 1, baths: 1, hoa: 2705, url: "https://www.redfin.com/CA/San-Marcos/1616-Circa-Del-Lago-92078/unit-C108/home/3846269" },
+    { address: "1616 Circa Del Lago #C110", price: 349000, beds: 2, baths: 2, hoa: 3212, url: "https://www.redfin.com/CA/San-Marcos/1616-Circa-Del-Lago-92078/unit-C110/home/3846273" },
+    { address: "1616 Circa Del Lago #C303", price: 410000, beds: 2, baths: 2, hoa: 3212, url: "https://www.redfin.com/CA/San-Marcos/1616-Circa-Del-Lago-92078/unit-C303/home/3846312" },
+  ];
+
+  const TAX_RATE = 0.0115;
+  const INSURANCE = 40;
+  const MORTGAGE_INSURANCE_RATE = 0.006;
+  const TYPICAL_HOA = 450;
+  const DEFAULTS = { ss: "", other: "", down: "", debts: "", rate: "7.40", dti: "45", gu: "0", city: "All" };
+  const FIELDS = ["ss", "other", "down", "debts", "rate", "dti"];
+
+  const el = (id) => document.getElementById(id);
+  const usd = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  const pct = (n) => Math.round(n * 100) + "%";
+  const toNumber = (text) => {
+    const value = parseFloat(String(text).replace(/[^0-9.]/g, ""));
+    return Number.isFinite(value) ? value : 0;
+  };
+
+  let state = readHash();
+
+  function readHash() {
+    const params = new URLSearchParams(location.hash.slice(1));
+    const next = { ...DEFAULTS };
+    for (const key of Object.keys(DEFAULTS)) if (params.has(key)) next[key] = params.get(key);
+    return next;
+  }
+
+  function writeHash() {
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(state)) {
+      if (value !== "" && value !== DEFAULTS[key]) params.set(key, value);
+    }
+    const hash = params.toString();
+    history.replaceState(null, "", hash ? "#" + hash : location.pathname + location.search);
+  }
+
+  function monthlyCost(price, hoa, a) {
+    if (price <= 0) return INSURANCE + hoa;
+    const loan = price - Math.min(a.down, price);
+    const r = a.rate / 100 / 12;
+    const n = 360;
+    const principalAndInterest =
+      loan === 0 ? 0 : r === 0 ? loan / n : (loan * r) / (1 - Math.pow(1 + r, -n));
+    const mortgageInsurance = loan / price > 0.8 ? (loan * MORTGAGE_INSURANCE_RATE) / 12 : 0;
+    return principalAndInterest + mortgageInsurance + (price * TAX_RATE) / 12 + INSURANCE + hoa;
+  }
+
+  function highestPriceThatFits(budget, hoa, a) {
+    if (monthlyCost(0, hoa, a) > budget) return 0;
+    let lo = 0;
+    let hi = 3000000;
+    for (let i = 0; i < 60; i++) {
+      const mid = (lo + hi) / 2;
+      if (monthlyCost(mid, hoa, a) <= budget) lo = mid;
+      else hi = mid;
+    }
+    return lo;
+  }
+
+  function statusFor(ratio, maxRatio) {
+    if (ratio <= maxRatio) return { label: "Within limit", tone: "ok" };
+    if (ratio <= maxRatio + 0.04) return { label: "Just over", tone: "warn" };
+    return { label: "Over limit", tone: "bad" };
+  }
+
+  function addressCell(listing) {
+    const note = listing.note ? `<span class="note">${listing.note}</span>` : "";
+    return `<td class="addr"><a href="${listing.url}" target="_blank" rel="noopener">${listing.address}</a>${note}</td>`;
+  }
+
+  function rowClass(result) {
+    return result.status && result.status.tone !== "bad" ? result.status.tone : "";
+  }
+
+  function render() {
+    const a = {
+      down: toNumber(state.down),
+      rate: toNumber(state.rate),
+      maxRatio: toNumber(state.dti) / 100,
+      debts: toNumber(state.debts),
+    };
+    const income = toNumber(state.ss) * (state.gu === "1" ? 1.25 : 1) + toNumber(state.other);
+    const hasIncome = income > 0;
+    const budget = income * a.maxRatio - a.debts;
+
+    const evaluate = (listing) => {
+      const cost = monthlyCost(listing.price, listing.hoa, a);
+      const ratio = hasIncome ? (cost + a.debts) / income : null;
+      return { listing, cost, ratio, status: ratio === null ? null : statusFor(ratio, a.maxRatio) };
+    };
+
+    const all = LISTINGS.map(evaluate);
+    const within = all.filter((r) => r.status && r.status.tone === "ok").length;
+
+    const maxPrice = hasIncome && budget > 0 ? highestPriceThatFits(budget, TYPICAL_HOA, a) : 0;
+    el("maxPrice").textContent = !hasIncome ? "—" : maxPrice > 0 ? usd(maxPrice) : "None";
+
+    const withinEl = el("withinCount");
+    withinEl.textContent = hasIncome ? `${within} of ${LISTINGS.length}` : "—";
+    withinEl.className = "stat-value" + (hasIncome ? (within > 0 ? " ok" : " warn") : "");
+
+    el("budgetText").textContent = !hasIncome
+      ? "Enter monthly income to see which condos fit and how much of it each would take."
+      : budget <= 0
+        ? "Other monthly debts already use up the lender's limit."
+        : `A lender would count ${usd(income)}/month of income. At a ${pct(a.maxRatio)} limit` +
+          (a.debts > 0 ? `, minus ${usd(a.debts)} of other debts,` : "") +
+          ` that leaves about ${usd(budget)}/month for the mortgage, property tax, insurance, and HOA.`;
+
+    document.querySelectorAll(".pill").forEach((pill) => {
+      pill.setAttribute("aria-pressed", String(pill.dataset.city === state.city));
+    });
+
+    const visible = all.filter((r) => state.city === "All" || r.listing.city === state.city);
+    el("listings").tBodies[0].innerHTML = visible
+      .map((r) => `
+        <tr class="${rowClass(r)}">
+          ${addressCell(r.listing)}
+          <td data-label="City">${r.listing.city}</td>
+          <td data-label="Price" class="num">${usd(r.listing.price)}</td>
+          <td data-label="Beds / baths" class="nowrap">${r.listing.beds} bd / ${r.listing.baths} ba</td>
+          <td data-label="Sq ft" class="num">${r.listing.sqft.toLocaleString("en-US")}</td>
+          <td data-label="HOA / mo" class="num">${usd(r.listing.hoa)}</td>
+          <td data-label="Est. monthly cost" class="num">${usd(r.cost)}</td>
+          <td data-label="Share of income" class="num">${r.ratio === null ? "—" : pct(r.ratio)}</td>
+          <td data-label="Status">${
+            r.status
+              ? `<span class="badge ${r.status.tone}">${r.status.label}</span>`
+              : `<span class="badge none">Enter income</span>`
+          }</td>
+        </tr>`)
+      .join("");
+
+    el("chateau").tBodies[0].innerHTML = CHATEAU.map(evaluate)
+      .map((r) => `
+        <tr class="${rowClass(r)}">
+          ${addressCell(r.listing)}
+          <td data-label="Price" class="num">${usd(r.listing.price)}</td>
+          <td data-label="Beds / baths" class="nowrap">${r.listing.beds} bd / ${r.listing.baths} ba</td>
+          <td data-label="HOA / mo" class="num">${usd(r.listing.hoa)}</td>
+          <td data-label="Est. monthly cost" class="num">${usd(r.cost)}</td>
+          <td data-label="Share of income" class="num">${r.ratio === null ? "—" : pct(r.ratio)}</td>
+        </tr>`)
+      .join("");
+  }
+
+  function syncInputs() {
+    const dti = el("dti");
+    if (![...dti.options].some((o) => o.value === state.dti)) dti.add(new Option(`${state.dti}%`, state.dti));
+    for (const id of FIELDS) el(id).value = state[id];
+    el("gu").checked = state.gu === "1";
+  }
+
+  for (const id of FIELDS) {
+    const input = el(id);
+    input.addEventListener(input.tagName === "SELECT" ? "change" : "input", () => {
+      state[id] = input.value.trim();
+      writeHash();
+      render();
+    });
+  }
+  el("gu").addEventListener("change", () => {
+    state.gu = el("gu").checked ? "1" : "0";
+    writeHash();
+    render();
+  });
+  document.querySelectorAll(".pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      state.city = pill.dataset.city;
+      writeHash();
+      render();
+    });
+  });
+  window.addEventListener("hashchange", () => {
+    state = readHash();
+    syncInputs();
+    render();
+  });
+
+  syncInputs();
+  render();
+</script>
+</body>
+</html>
